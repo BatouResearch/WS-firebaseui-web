@@ -34,6 +34,16 @@
       <div class="firebaseui-card-content">
         <div class="firebaseui-relative-wrapper">
           {call firebaseui.auth.soy2.element.email data="all" /}
+          <div class="firebaseui-tos-consent">
+              <input type="checkbox" class="firebaseui-tos-checkbox" required>
+              <span class="firebaseui-tos-text">I agree to the </span>
+              {call firebaseui.auth.soy2.element.tosLink data="all" /}
+          </div>
+          <div class="firebaseui-tos-consent">
+            <input type="checkbox" class="firebaseui-tos-checkbox" required>
+            <span class="firebaseui-tos-text">To see how we use your data, check our </span>
+            {call firebaseui.auth.soy2.element.ppLink data="all" /}
+          </div>
         </div>
       </div>
       <div class="firebaseui-card-actions">

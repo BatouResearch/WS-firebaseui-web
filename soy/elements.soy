@@ -67,8 +67,8 @@
       <label class="mdl-textfield__label firebaseui-label" for="ui-sign-in-phone-number-input">
         {msg desc="Label of an phone number input field."}Phone number{/msg}
       </label>
-      <input 
-          type="tel" 
+      <input
+          type="tel"
           name="phoneNumber"
           id="ui-sign-in-phone-number-input"
           class="mdl-textfield__input firebaseui-input firebaseui-id-phone-number"
@@ -91,7 +91,7 @@
     <label class="mdl-textfield__label firebaseui-label" for="ui-sign-in-phone-confirmation-code-input">
       {msg desc="Label of 6-digit SMS verification code."}6-digit code{/msg}
     </label>
-    <input 
+    <input
         type="number"
         name="phoneConfirmationCode"
         id="ui-sign-in-phone-confirmation-code-input"
@@ -468,6 +468,29 @@
     </ul>
   {/if}
 {/template}
+
+/**
+ * Renders the link of Terms of Service.
+ */
+{template .tosLink}
+  {if $ij.tosCallback}
+  <a href="javascript:void(0)" class="firebaseui-link firebaseui-tos-link" target="_blank">
+    {msg desc="Label for the terms of service"}Terms of Service{/msg}
+  </a>
+  {/if}
+{/template}
+
+/**
+ * Renders the link of Privacy Policy.
+ */
+{template .ppLink}
+  {if $ij.privacyPolicyCallback}
+    <a href="javascript:void(0)" class="firebaseui-link firebaseui-pp-link" target="_blank">
+      {msg desc="Label for the privacy policy"}Privacy Policy{/msg}
+    </a>
+  {/if}
+{/template}
+
 
 
 /**
