@@ -80,6 +80,7 @@ firebaseui.auth.ui.page.PasswordSignUp =
     }
     this.initNewPasswordElement();
     this.initTOSElement();
+    this.initPPElement();
     this.initFormElement(this.onSubmitClick_, this.onCancelClick_);
     this.setupFocus_();
     super.enterDocument();
