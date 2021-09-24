@@ -117,10 +117,10 @@ element.email.getEmail = function() {
 element.email.checkAndGetEmail = function() {
   var emailElement = element.email.getEmailElement.call(this);
   var errorElement = element.email.getEmailErrorElement.call(this);
-  if (element.email.validate_(emailElement, errorElement)) {
-    return goog.string.trim(
-        goog.asserts.assert(element.getInputValue(emailElement)));
+  if (!element.email.validate_(emailElement, errorElement)) {
+    return null
   }
-  return null;
+  return goog.string.trim(
+      goog.asserts.assert(element.getInputValue(emailElement)));
 };
 });

@@ -161,6 +161,8 @@ firebaseui.auth.ui.element.getInputValue = function(e) {
 };
 
 
+
+
 /**
  * Hides the element.
  * @param {Element} e The element to hide.

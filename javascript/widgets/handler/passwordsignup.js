@@ -83,6 +83,11 @@ firebaseui.auth.widget.handler.onSignUpSubmit_ = function(app, component) {
 
   // Check fields are valid.
   var email = component.checkAndGetEmail();
+  var tos = component.getTOSValue()
+
+  if (!tos){
+    return;
+  }
 
   var name = null;
   if (requireDisplayName) {

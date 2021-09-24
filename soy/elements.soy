@@ -491,7 +491,23 @@
   {/if}
 {/template}
 
+/**
+ * Renders the checkbox of TOS.
+ */
+{template .tosConsent}
+  {if $ij.tosCallback}
+    <input type="checkbox" class="firebaseui-tos-checkbox" required>
+  {/if}
+{/template}
 
+/**
+ * Renders the checkbox of Privacy Policy.
+ */
+{template .ppConsent}
+  {if $ij.tosCallback}
+    <input type="checkbox" class="firebaseui-tos-checkbox" required>
+  {/if}
+{/template}
 
 /**
  * Renders Terms of Service and Privacy Policy agreement and a notice to the user about SMS rates

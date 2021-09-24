@@ -24,6 +24,7 @@ goog.require('firebaseui.auth.ui.element.email');
 goog.require('firebaseui.auth.ui.element.form');
 goog.require('firebaseui.auth.ui.element.name');
 goog.require('firebaseui.auth.ui.element.newPassword');
+goog.require('firebaseui.auth.ui.element.tosConsent');
 goog.require('firebaseui.auth.ui.page.Base');
 goog.requireType('goog.dom.DomHelper');
 
@@ -77,6 +78,7 @@ firebaseui.auth.ui.page.PasswordSignUp =
       this.initNameElement();
     }
     this.initNewPasswordElement();
+    this.initTOSElement();
     this.initFormElement(this.onSubmitClick_, this.onCancelClick_);
     this.setupFocus_();
     super.enterDocument();
@@ -162,6 +164,16 @@ goog.mixin(
           firebaseui.auth.ui.element.newPassword.initNewPasswordElement,
       checkAndGetNewPassword:
           firebaseui.auth.ui.element.newPassword.checkAndGetNewPassword,
+
+      //For TOS.
+      initTOSElement:
+        firebaseui.auth.ui.element.tosConsent.initCheckboxElement,
+      getTOSElement:
+        firebaseui.auth.ui.element.tosConsent.getCheckboxElement,
+      getTOSValue:
+        firebaseui.auth.ui.element.tosConsent.getCheckbox,
+      getTOSErrorElement:
+        firebaseui.auth.ui.element.tosConsent.getCheckboxErrorElement,
 
 
       // For form.
