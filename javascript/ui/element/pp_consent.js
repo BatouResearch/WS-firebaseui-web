@@ -16,7 +16,7 @@
  * @fileoverview Binds handlers for email UI element.
  */
 
-goog.provide('firebaseui.auth.ui.element.tosConsent');
+goog.provide('firebaseui.auth.ui.element.ppConsent');
 
 goog.require('firebaseui.auth.soy2.strings');
 goog.require('firebaseui.auth.ui.element');
@@ -33,8 +33,8 @@ goog.scope(function() {
      * @return {Element} The checkbox input.
      * @this {goog.ui.Component}
      */
-    element.tosConsent.getCheckboxElement = function() {
-        return this.getElementByClass('firebaseui-tos-checkbox');
+    element.ppConsent.getCheckboxElement = function() {
+        return this.getElementByClass('firebaseui-pp-checkbox');
     };
 
     /**
@@ -44,11 +44,11 @@ goog.scope(function() {
      * @return {boolean} True if the field is valid.
      * @private
      */
-    element.tosConsent.validate_ = function(checkboxElement, errorElement) {
+    element.ppConsent.validate_ = function(checkboxElement, errorElement) {
         var value = element.getInputValue(checkboxElement) !== null;
         if (!value) {
             //element.setValid(checkboxElement, false);
-            element.show(errorElement, strings.errorMissingTOS().toString());
+            element.show(errorElement, strings.errorMissingPP().toString());
             return false;
         } else {
             //element.setValid(checkboxElement, true);
@@ -64,9 +64,9 @@ goog.scope(function() {
      *     detected.
      * @this {goog.ui.Component}
      */
-    element.tosConsent.initCheckboxElement = function(opt_onEnter) {
-        var checkboxElement = element.tosConsent.getCheckboxElement.call(this);
-        var errorElement = element.tosConsent.getCheckboxErrorElement.call(this);
+    element.ppConsent.initCheckboxElement = function(opt_onEnter) {
+        var checkboxElement = element.ppConsent.getCheckboxElement.call(this);
+        var errorElement = element.ppConsent.getCheckboxErrorElement.call(this);
         element.listenForInputEvent(this, checkboxElement, function(e) {
             // Clear the error message.
             if (element.isShown(errorElement)) {
@@ -80,20 +80,20 @@ goog.scope(function() {
      * @return {Element} The error panel.
      * @this {goog.ui.Component}
      */
-    element.tosConsent.getCheckboxErrorElement = function() {
-        return this.getElementByClass('firebaseui-id-tos-consent-error');
+    element.ppConsent.getCheckboxErrorElement = function() {
+        return this.getElementByClass('firebaseui-id-pp-consent-error');
     };
 
     /**
      * @return {?boolean} The checkbox in the input.
      * @this {goog.ui.Component}
      */
-    element.tosConsent.getCheckbox = function() {
-        var tosElement = element.tosConsent.getCheckboxElement.call(this);
-        var tosErrorElement = element.tosConsent.getCheckboxErrorElement.call(this);
-        if (!element.tosConsent.validate_(tosElement, tosErrorElement)) {
+    element.ppConsent.getCheckbox = function() {
+        var ppElement = element.ppConsent.getCheckboxElement.call(this);
+        var ppErrorElement = element.ppConsent.getCheckboxErrorElement.call(this);
+        if (!element.ppConsent.validate_(ppElement, ppErrorElement)) {
             return null
         }
-        return element.getInputValue(element.tosConsent.getCheckboxElement.call(this)) !== null;
+        return element.getInputValue(element.ppConsent.getCheckboxElement.call(this)) !== null;
     };
 });

@@ -25,6 +25,7 @@ goog.require('firebaseui.auth.ui.element.form');
 goog.require('firebaseui.auth.ui.element.name');
 goog.require('firebaseui.auth.ui.element.newPassword');
 goog.require('firebaseui.auth.ui.element.tosConsent');
+goog.require('firebaseui.auth.ui.element.ppConsent');
 goog.require('firebaseui.auth.ui.page.Base');
 goog.requireType('goog.dom.DomHelper');
 
@@ -175,6 +176,16 @@ goog.mixin(
       getTOSErrorElement:
         firebaseui.auth.ui.element.tosConsent.getCheckboxErrorElement,
 
+
+      //For PP.
+      initPPElement:
+        firebaseui.auth.ui.element.ppConsent.initCheckboxElement,
+      getPPElement:
+        firebaseui.auth.ui.element.ppConsent.getCheckboxElement,
+      getPPValue:
+        firebaseui.auth.ui.element.ppConsent.getCheckbox,
+      getPPErrorElement:
+        firebaseui.auth.ui.element.ppConsent.getCheckboxErrorElement,
 
       // For form.
       getSubmitElement:

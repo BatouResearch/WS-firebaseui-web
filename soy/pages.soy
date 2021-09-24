@@ -113,20 +113,12 @@
           {call firebaseui.auth.soy2.element.name data="all" /}
         {/if}
         {call firebaseui.auth.soy2.element.newPassword /}
-                <div class="firebaseui-tos-consent">
-                  {call firebaseui.auth.soy2.element.tosConsent data="all"}{/call}
-                    <div>
-                              <span class="firebaseui-tos-text">I have read and agree to the </span>
-                              {call firebaseui.auth.soy2.element.tosLink data="all" /}
-                    </div>
-                          </div>
-                          <div class="firebaseui-tos-consent">
-                            {call firebaseui.auth.soy2.element.ppConsent data="all"/}
-                            <div>
-                            <span class="firebaseui-tos-text">I agree to the </span>
-                            {call firebaseui.auth.soy2.element.ppLink data="all" /}
-                            </div>
-                          </div>
+        <div class="firebaseui-tos-consent">
+          {call firebaseui.auth.soy2.element.tosConsent data="all"}{/call}
+        </div>
+        <div class="firebaseui-tos-consent">
+          {call firebaseui.auth.soy2.element.ppConsent data="all"/}
+        </div>
       </div>
       <div class="firebaseui-card-actions">
         <div class="firebaseui-form-actions">

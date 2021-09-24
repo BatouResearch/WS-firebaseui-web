@@ -497,6 +497,14 @@
 {template .tosConsent}
   {if $ij.tosCallback}
     <input type="checkbox" class="firebaseui-tos-checkbox" required>
+    <div>
+      <span class="firebaseui-tos-text">I have read and agree to the </span>
+      {call firebaseui.auth.soy2.element.tosLink data="all" /}
+    </div>
+    <div class="firebaseui-error-wrapper">
+      <p class="firebaseui-error firebaseui-checkbox-input-error firebaseui-hidden{sp}
+              firebaseui-id-tos-consent-error"></p>
+    </div>
   {/if}
 {/template}
 
@@ -505,7 +513,15 @@
  */
 {template .ppConsent}
   {if $ij.tosCallback}
-    <input type="checkbox" class="firebaseui-tos-checkbox" required>
+    <input type="checkbox" class="firebaseui-pp-checkbox" required>
+    <div>
+      <span class="firebaseui-tos-text">I agree to the </span>
+      {call firebaseui.auth.soy2.element.ppLink data="all" /}
+    </div>
+    <div class="firebaseui-error-wrapper">
+      <p class="firebaseui-error firebaseui-checkbox-input-error firebaseui-hidden{sp}
+              firebaseui-id-pp-consent-error"></p>
+    </div>
   {/if}
 {/template}
 
